@@ -1,0 +1,6 @@
+{
+
+    "data-root": "/home/docker_images",
+    "storage-driver": "aufs"
+
+}

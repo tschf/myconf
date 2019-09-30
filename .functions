@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Using RabbitVCS diff seems broken. Command to launch GUI of changes with
+# previous revision of the file
+svndiff() {
+    svn diff -r PREV:HEAD $1 --diff-cmd meld;
+}
+
+sqlplus() {
+    rlwrap sqlplus $1
+}

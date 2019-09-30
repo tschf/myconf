@@ -1,0 +1,34 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.colorTheme": "Visual Studio Light",
+    "editor.renderWhitespace": "all",
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.minimap.enabled": false,
+    "extensions.ignoreRecommendations": false,
+    "telemetry.enableTelemetry": false,
+    "editor.rulers": [
+        80
+    ],
+    "editor.acceptSuggestionOnEnter": "smart",
+    "update.mode": "none",
+    "odb-task.sqlcl-path": "/home/trent/Downloads/sqlcl/bin/sql",
+    "odb-task.auto-save": true,
+    "svn.enableProposedApi": "none",
+    "files.associations": {
+        "*.pkb": "plsql"
+    },
+    "[plsql]": {
+
+    },
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false,
+        "files.trimTrailingWhitespace": false
+    },
+    "go.inferGopath": true,
+    "workbench.colorCustomizations": {
+        "terminal.background": "#000",
+        "terminal.foreground": "#fff"
+    }
+}

@@ -1,0 +1,3 @@
+alias prettyjson='python -m json.tool'
+alias prettyxml='xmllint --format -'
+alias path='echo -e ${PATH//:/\\n}'
