@@ -1,2 +1,6 @@
 [OCI_CLI_COMMAND_ALIASES]
 ls = list
+
+[OCI_CLI_PARAM_ALIASES]
+-c = --compartment-id
+--db-id = --database-id
