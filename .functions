@@ -3,7 +3,35 @@
 # Using RabbitVCS diff seems broken. Command to launch GUI of changes with
 # previous revision of the file
 svndiff() {
-    svn diff -r PREV:HEAD $1 --diff-cmd meld;
+
+    while [[ $# -gt 0 ]]
+    do
+    key="$1"
+
+    case $key in
+        -r|--rev)
+        REVISION="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        *)    # unknown option
+        FILE=$1
+        shift # past argument
+        ;;
+    esac
+    done
+
+    if [[ -z "${FILE+x}" ]]
+    then
+        echo "[ERROR] File not set" >&2
+    fi
+
+    if [[ -z "${REVISION+x}" ]]
+    then
+        svn diff -r PREV:HEAD $1 --diff-cmd meld
+    else
+        svn diff -r $REVISION $1 --diff-cmd meld
+    fi
 }
 
 sqlplus() {
