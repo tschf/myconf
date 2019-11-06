@@ -24,6 +24,7 @@ svndiff() {
     if [[ -z "${FILE+x}" ]]
     then
         echo "[ERROR] File not set" >&2
+        exit 1
     fi
 
     if [[ -z "${REVISION+x}" ]]
