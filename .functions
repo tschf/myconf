@@ -29,10 +29,13 @@ svndiff() {
 
     if [[ -z "${REVISION+x}" ]]
     then
-        svn diff -r PREV:HEAD $1 --diff-cmd meld
+        svn diff -r PREV:HEAD $FILE --diff-cmd meld
     else
-        svn diff -r $REVISION $1 --diff-cmd meld
+        svn diff -r $REVISION $FILE --diff-cmd meld
     fi
+
+    unset REVISION
+    unset FILE
 }
 
 sqlplus() {
