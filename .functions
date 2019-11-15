@@ -38,6 +38,25 @@ svndiff() {
     unset FILE
 }
 
+# Adapted from: https://stackoverflow.com/questions/9600382/svn-command-to-delete-all-locally-missing-files
+svnrmmissing() {
+
+    svn status | grep '^!' | sed -e s/"!       "//g | while read line
+    do
+        svn rm "$line"
+    done
+
+}
+
+svnaddnew() {
+
+    svn status | grep '^?' | sed -e s/"?       "//g | while read line
+    do
+        svn add "$line"
+    done
+
+}
+
 sqlplus() {
     rlwrap sqlplus $1
 }
