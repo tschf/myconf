@@ -60,3 +60,13 @@ svnaddnew() {
 sqlplus() {
     rlwrap sqlplus $1
 }
+
+proj() {
+    projName=$1
+    if [[ "$projName" != "" ]]
+    then
+        cd ~/Projects/$projName
+    else
+        cd ~/Projects
+    fi
+}
