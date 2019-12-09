@@ -3,3 +3,5 @@ alias prettyjson='python -m json.tool'
 alias prettyxml='xmllint --format -'
 alias path='echo -e ${PATH//:/\\n}'
 alias svnnew='svn status | grep ^?'
+# Launchpad bug 1620628
+alias tuxboot='sudo QT_X11_NO_MITSHM=1 tuxboot'
