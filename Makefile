@@ -1,6 +1,6 @@
 .PHONY: link
 link:
-	@for proj_file in $(shell find $(CURDIR) -name ".*" -not -name ".git"); do \
+	@for proj_file in $(shell find $(CURDIR) -name ".*" -not -name ".git" -not -name ".bashrc"); do \
 		base_file=$$(basename $$proj_file); \
 		ln -sf $$proj_file $(HOME)/$$base_file; \
 	done; \
