@@ -11,6 +11,13 @@ git:
 	@sudo apt install -y libsecret-1-0 libsecret-1-dev
 	@sudo make -C /usr/share/doc/git/contrib/credential/libsecret
 
+.PHONY: pkginstall
+pkginstall:
+	@xargs -rxa apt.pkglist -- sudo apt install --
+	@while read pkg; do \
+		sudo snap install $$pkg; \
+	done < snap.pkglist; \
+
 .PHONY: vscode
 vscode: code_data_path=.config/Code/User
 vscode:
