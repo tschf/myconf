@@ -4,6 +4,10 @@ link:
 		base_file=$$(basename $$proj_file); \
 		ln -sf $$proj_file $(HOME)/$$base_file; \
 	done; \
+        ln -sf $$HOME/Projects/myip/myip $$HOME/bin/myip; \
+        ln -sf $$HOME/Projects/pssync/pspull $$HOME/bin/pspull; \
+        ln -sf $$HOME/Projects/pssync/pspush $$HOME/bin/pspush; \
+        ln -sf $$HOME/Projects/Projects/go/src/github.com/tschf/unphoto/unphoto $$HOME/bin/unphoto;
 
 .PHONY: git
 git:
