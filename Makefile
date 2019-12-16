@@ -19,9 +19,6 @@ git:
 .PHONY: pkginstall
 pkginstall:
 	@xargs -rxa apt.pkglist -- sudo apt install --
-	@while read pkg; do \
-		sudo snap install $$pkg; \
-	done < snap.pkglist; \
 
 .PHONY: vscode
 vscode: code_data_path=.config/Code/User
