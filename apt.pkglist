@@ -11,3 +11,5 @@ openjdk-11-jdk
 alien
 rlwrap
 curl
+nmap
+jq
