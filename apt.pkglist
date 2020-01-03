@@ -13,3 +13,5 @@ rlwrap
 curl
 nmap
 jq
+gthumb
+chrome-gnome-shell
