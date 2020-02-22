@@ -18,3 +18,10 @@ gthumb
 chrome-gnome-shell
 flatpak
 gnome-software-plugin-flatpak
+cifs-utils
+gnome-clocks
+pwgen
+sshuttle
+inotify-tools
+whois
+python-pip
