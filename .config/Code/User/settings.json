@@ -16,7 +16,9 @@
     "odb-task.auto-save": true,
     "svn.enableProposedApi": "none",
     "files.associations": {
-        "*.pkb": "plsql"
+        "*.pkb": "sql",
+        "*.pks": "sql",
+        "*.ddl": "sql"
     },
     "[plsql]": {
 
