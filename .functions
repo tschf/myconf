@@ -57,6 +57,12 @@ svnaddnew() {
 
 }
 
+svnlog() {
+
+    svn log | perl -l40pe 's/^-+/\n/'
+
+}
+
 sqlplus() {
     rlwrap sqlplus $1
 }
