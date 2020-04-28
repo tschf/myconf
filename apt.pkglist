@@ -3,7 +3,6 @@ gnome-tweaks
 vim
 network-manager-openvpn-gnome
 network-manager-openconnect-gnome
-dconf-tools
 diodon
 subversion
 rabbitvcs-nautilus
@@ -24,5 +23,4 @@ pwgen
 sshuttle
 inotify-tools
 whois
-python-pip
 autokey-gtk
