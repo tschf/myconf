@@ -32,5 +32,25 @@
     "workbench.colorCustomizations": {
         "terminal.background": "#000",
         "terminal.foreground": "#fff"
-    }
+    },
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 5,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.ignoreLegacyWarning": true,
+    "go.formatTool": "goimports",
+    "editor.tabSize": 2,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "redhat.telemetry.enabled": true,
+    "workbench.iconTheme": "vscode-icons"
 }
