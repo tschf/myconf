@@ -52,5 +52,6 @@
         "editor.wordBasedSuggestions": false
     },
     "redhat.telemetry.enabled": true,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "security.workspace.trust.untrustedFiles": "open"
 }
