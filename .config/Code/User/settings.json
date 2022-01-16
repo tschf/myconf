@@ -6,7 +6,7 @@
     "files.trimTrailingWhitespace": true,
     "editor.minimap.enabled": false,
     "extensions.ignoreRecommendations": false,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "editor.rulers": [
         80
     ],
