@@ -64,7 +64,13 @@ svnlog() {
 }
 
 sqlplus() {
-    rlwrap sqlplus $1
+    # All arg options:
+    # - $*
+    # - $@
+    # If using the $@ syntax, it seems to read values line by line, unless you
+    # use it with echo, or first assign it to a variable, e.g args="$@". $*
+    # seems to get it to a single line fine.
+    rlwrap sqlplus "$*"
 }
 
 proj() {
