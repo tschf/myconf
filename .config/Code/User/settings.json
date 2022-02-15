@@ -57,5 +57,5 @@
     },
     "redhat.telemetry.enabled": true,
     "workbench.iconTheme": "vscode-icons",
-    "security.workspace.trust.untrustedFiles": "open"
+    "window.restoreWindows": "none"
 }
