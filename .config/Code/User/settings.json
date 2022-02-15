@@ -30,6 +30,7 @@
     },
     "go.inferGopath": true,
     "workbench.colorCustomizations": {
+        "terminal.selectionBackground": "#a38e8e",
         "terminal.background": "#000",
         "terminal.foreground": "#fff"
     },
