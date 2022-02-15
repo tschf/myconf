@@ -52,6 +52,9 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": false
     },
+    "docker.dockerodeOptions": {
+        "socketPath": "/run/user/1000/podman/podman.sock"
+    },
     "redhat.telemetry.enabled": true,
     "workbench.iconTheme": "vscode-icons",
     "security.workspace.trust.untrustedFiles": "open"
