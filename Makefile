@@ -6,7 +6,8 @@ link:
 	done; \
         ln -sf $$HOME/Projects/myip/myip $$HOME/bin/myip; \
         ln -sf $$HOME/Projects/Projects/go/src/github.com/tschf/unphoto/unphoto $$HOME/bin/unphoto; \
-        ln -sf $$HOME/Projects/myconf/.oci/oci_cli_rc $$HOME/.oci/oci_cli_rc;
+        ln -sf $$HOME/Projects/myconf/.oci/oci_cli_rc $$HOME/.oci/oci_cli_rc; \
+        ln -sf $$HOME/Projects/myconf/.config/starship.toml $$HOME/.config/starship.toml;
 
 .PHONY: git
 git:
