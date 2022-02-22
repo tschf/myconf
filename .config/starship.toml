@@ -1,12 +1,98 @@
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[✗](bold red) "
+# Use custom format
+format = """
+[╭─](bold blue)$username\
+$hostname\
+$jobs\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$time\
+$status\
+$shell\
+[╰>](bold blue) """
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "(bold green)[$user]($style)"
+disabled = false
+show_always = true
 
 [hostname]
-disabled = false
-format =  "on [$hostname](bold red) "
 ssh_only = false
+format =  "[@$hostname ](green bold)"
+disabled = false
+
+[jobs]
+disabled = true
 
 [directory]
-format = "at [$path]($style)[$read_only]($read_only_style) "
+read_only = " 🔒"
+read_only_style = "fg:blue bold"
+style = "blue bold"
+format = "[$path ]($style)[$read_only]($read_only_style)"
+
+[git_branch]
+symbol = " "
+always_show_remote = false
+format = "[on $symbol$branch]($style) "
+style = "purple bold"
+truncation_length = "2^63 - 1"
+truncation_symbol = "…"
+only_attached = false
+disabled = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+# [character]                            # The name of the module we are configuring is "character"
+# success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
