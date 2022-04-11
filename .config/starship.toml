@@ -83,7 +83,7 @@ style = "blue bold"
 format = "[$path ]($style)[$read_only]($read_only_style)"
 
 [git_branch]
-symbol = " "
+symbol = " "
 always_show_remote = false
 format = "[on $symbol$branch]($style) "
 style = "purple bold"
