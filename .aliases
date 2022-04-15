@@ -5,3 +5,4 @@ alias path='echo -e ${PATH//:/\\n}'
 alias svnnew='svn status | grep ^?'
 # Launchpad bug 1620628
 alias tuxboot='sudo QT_X11_NO_MITSHM=1 tuxboot'
+alias dockervols='cd /home/trent/.local/share/containers/storage/volumes/'
