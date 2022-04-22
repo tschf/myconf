@@ -1,4 +1,5 @@
 alias back='cd - > /dev/null'
+alias cd..='cd ..'
 alias prettyjson='python -m json.tool'
 alias prettyxml='xmllint --format -'
 alias path='echo -e ${PATH//:/\\n}'
