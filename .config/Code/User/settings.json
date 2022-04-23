@@ -12,7 +12,6 @@
     ],
     "editor.acceptSuggestionOnEnter": "smart",
     "update.mode": "none",
-    "odb-task.sqlcl-path": "/home/trent/Downloads/sqlcl/bin/sql",
     "odb-task.auto-save": true,
     "svn.enableProposedApi": "none",
     "files.associations": {
