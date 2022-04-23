@@ -22,3 +22,5 @@
     # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [init]
 	defaultBranch = main
+[help]
+	autocorrect = 1
