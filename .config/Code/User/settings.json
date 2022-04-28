@@ -27,7 +27,6 @@
         "editor.quickSuggestions": false,
         "files.trimTrailingWhitespace": false
     },
-    "go.inferGopath": true,
     "workbench.colorCustomizations": {
         "terminal.selectionBackground": "#a38e8e",
         "terminal.background": "#000",
@@ -37,7 +36,6 @@
     "workbench.editor.limit.value": 5,
     "diffEditor.ignoreTrimWhitespace": false,
     "git.ignoreLegacyWarning": true,
-    "go.formatTool": "goimports",
     "editor.tabSize": 2,
     "[dart]": {
         "editor.formatOnSave": true,
