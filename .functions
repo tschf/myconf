@@ -82,3 +82,76 @@ proj() {
         cd ~/Projects
     fi
 }
+
+# Wrap function body in () to create a sub-shell. This allows us to exit without
+# closing the terminal in the process. Idea taken from here:
+# https://stackoverflow.com/questions/32684119/exit-when-one-process-in-pipe-fails
+sqlb() {(
+    # Exit function on any error
+    set -e
+    # pipefail so when getting branch name, which we pipe to `tr`, if it fails
+    # i.e. not a branch, this process exits
+    set -o pipefail
+    # connect string is driven from the current folder I'm in (must be in root)
+    # and the branch I'm on. Replace dashes with underscores - connect string won't
+    # use dashes
+    branch_name=$(git rev-parse --abbrev-ref HEAD | tr "-" "_")
+    connect_string=$(echo "xgbu_ace_${PWD##*/}_${branch_name}")
+    # $* - pass any additional arguments I passed when calling the function
+    # We need to split this into a conditional because SQLcl still treats it as
+    # a value even if an empty string is passed in and it throws an error trying
+    # to connect.
+    if [[ "$*" != "" ]]
+    then
+        sql -L ${G_ACDC_SCHEMA}/${G_ACDC_SCHEMA_PASSWORD}@${connect_string} "$*"
+    else
+        sql -L ${G_ACDC_SCHEMA}/${G_ACDC_SCHEMA_PASSWORD}@${connect_string}
+    fi
+)}
+
+# Same as above, but this time connect as a DBA.
+sqlbdba() {(
+    # Exit function on any error
+    set -e
+    # pipefail so when getting branch name, which we pipe to `tr`, if it fails
+    # i.e. not a branch, this process exits
+    set -o pipefail
+    # connect string is driven from the current folder I'm in (must be in root)
+    # and the branch I'm on. Replace dashes with underscores - connect string won't
+    # use dashes
+    branch_name=$(git rev-parse --abbrev-ref HEAD | tr "-" "_")
+    connect_string=$(echo "xgbu_ace_${PWD##*/}_${branch_name}")
+    # $* - pass any additional arguments I passed when calling the function
+    # We need to split this into a conditional because SQLcl still treats it as
+    # a value even if an empty string is passed in and it throws an error trying
+    # to connect.
+    if [[ "$*" != "" ]]
+    then
+        sql sys/${G_ACDC_SCHEMA_PASSWORD}@${connect_string} as sysdba "$*"
+    else
+        sql sys/${G_ACDC_SCHEMA_PASSWORD}@${connect_string} as sysdba
+    fi
+)}
+# Same as above, but this time connect as a admin.
+sqlbadmin() {(
+    # Exit function on any error
+    set -e
+    # pipefail so when getting branch name, which we pipe to `tr`, if it fails
+    # i.e. not a branch, this process exits
+    set -o pipefail
+    # connect string is driven from the current folder I'm in (must be in root)
+    # and the branch I'm on. Replace dashes with underscores - connect string won't
+    # use dashes
+    branch_name=$(git rev-parse --abbrev-ref HEAD | tr "-" "_")
+    connect_string=$(echo "xgbu_ace_${PWD##*/}_${branch_name}")
+    # $* - pass any additional arguments I passed when calling the function
+    # We need to split this into a conditional because SQLcl still treats it as
+    # a value even if an empty string is passed in and it throws an error trying
+    # to connect.
+    if [[ "$*" != "" ]]
+    then
+        sql admin/${G_ACDC_SCHEMA_PASSWORD}@${connect_string} "$*"
+    else
+        sql admin/${G_ACDC_SCHEMA_PASSWORD}@${connect_string}
+    fi
+)}
