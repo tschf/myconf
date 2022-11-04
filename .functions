@@ -94,9 +94,11 @@ sqlb() {(
     set -o pipefail
     # connect string is driven from the current folder I'm in (must be in root)
     # and the branch I'm on. Replace dashes with underscores - connect string won't
-    # use dashes
+    # use dashes.
     branch_name=$(git rev-parse --abbrev-ref HEAD | tr "-" "_")
     connect_string=$(echo "xgbu_ace_${PWD##*/}_${branch_name}")
+    # Use lowercase just to make things nicer.
+    connect_string=$(echo "${connect_string}" | tr "[:upper:]" "[:lower:]")
     # $* - pass any additional arguments I passed when calling the function
     # We need to split this into a conditional because SQLcl still treats it as
     # a value even if an empty string is passed in and it throws an error trying
