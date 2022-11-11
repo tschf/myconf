@@ -12,3 +12,4 @@ alias apexes='find db/apex -name "install.sql" | sed -E "s/^/@@/g" > .apexinstal
 alias httpserve='python -m http.server'
 alias sql='sql -L'
 alias liquibase='liquibase --show-banner=false'
+alias k='kubectl'
