@@ -129,3 +129,17 @@ sqlb() {(
         sql -L ${G_ACDC_SCHEMA}/${G_ACDC_SCHEMA_PASSWORD}@${connect_string}
     fi
 )}
+
+ocisecretsearch(){
+    local displayName="$1"
+
+    if [[ ! -z "$displayName" ]]
+    then
+        oci search resource structured-search \
+            --query-text "query vaultsecret resources where (displayName =~ '${displayName}')" \
+            --output table \
+            --query "data.items[*].{id:identifier,name:\"display-name\"}"
+    else
+        printf "No search string specified\n" >&2
+    fi
+}
