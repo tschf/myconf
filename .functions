@@ -116,6 +116,8 @@ sqlb() {(
     # Use lowercase just to make things nicer.
     connect_string=$(echo "${connect_string}" | tr "[:upper:]" "[:lower:]")
 
+    printf "sql ${G_ACDC_SCHEMA}@${connect_string}\n"
+
     # $* - pass any additional arguments I passed when calling the function
     # We need to split this into a conditional because SQLcl still treats it as
     # a value even if an empty string is passed in and it throws an error trying
