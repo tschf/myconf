@@ -130,7 +130,7 @@ sqlb() {(
     fi
 )}
 
-ocisecretsearch(){
+ocisearch_secret(){
     local displayName="$1"
 
     if [[ ! -z "$displayName" ]]
@@ -139,6 +139,24 @@ ocisecretsearch(){
             --query-text "query vaultsecret resources where (displayName =~ '${displayName}')" \
             --output table \
             --query "data.items[*].{id:identifier,name:\"display-name\"}"
+    else
+        printf "No search string specified\n" >&2
+    fi
+}
+
+ocisearch_adb(){
+    local displayName="$1"
+
+    if [[ ! -z "$displayName" ]]
+    then
+        oci search resource structured-search \
+            --query-text "query autonomousdatabase resources where (displayName =~ '${displayName}') sorted by displayName asc" \
+            --query "data.items[*].{
+                name:\"display-name\",
+                id:identifier,
+                state:\"lifecycle-state\"
+            }" \
+            --output table
     else
         printf "No search string specified\n" >&2
     fi
