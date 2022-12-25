@@ -8,3 +8,8 @@ alias dockervols='cd /home/trent/.local/share/containers/storage/volumes/'
 # pkgfiles - suffix package name at the end
 # e.g. `pkgfiles git-credential-libsecret``
 alias pkgfiles='dnf repoquery --installed -l'
+alias apexes='find db/apex -name "install.sql" | sed -E "s/^/@@/g" > .apexinstall.sql && echo "exit" >> .apexinstall.sql'
+alias httpserve='python -m http.server'
+alias sql='sql -L'
+alias liquibase='liquibase --show-banner=false'
+alias k='kubectl'

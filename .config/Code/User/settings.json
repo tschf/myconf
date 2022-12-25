@@ -31,7 +31,6 @@
         },
         "files.trimTrailingWhitespace": false
     },
-    "go.inferGopath": true,
     "workbench.colorCustomizations": {
         "terminal.selectionBackground": "#a38e8e",
         "terminal.background": "#000",
@@ -41,7 +40,6 @@
     "workbench.editor.limit.value": 5,
     "diffEditor.ignoreTrimWhitespace": false,
     "git.ignoreLegacyWarning": true,
-    "go.formatTool": "goimports",
     "editor.tabSize": 2,
     "[dart]": {
         "editor.formatOnSave": true,
@@ -66,7 +64,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "window.restoreWindows": "none",
     "terminal.integrated.enableShellIntegration": true,
-    "editor.fontFamily": "'SauceCodePro Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'SauceCodePro Nerd Font Mono', 'SauceCodePro Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontSize": 16,
     "code-eol.newlineCharacter": "¬",
     "code-eol.returnCharacter" : "¤",
@@ -78,4 +76,5 @@
     "git.confirmSync": false,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "vsicons.dontShowNewVersionMessage": true,
+    "terminal.integrated.shellIntegration.enabled": false,
 }
