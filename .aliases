@@ -14,3 +14,6 @@ alias sql='sql -L'
 alias liquibase='liquibase --show-banner=false'
 alias k='kubectl'
 alias wifipassword='nmcli device wifi show-password'
+# Show the 5 most recent actions. 7 = 2 for header + 5 for data
+# Get more details with `dnf history info n` for a given entry
+alias dnfrecent='dnf history | head -n 7'
