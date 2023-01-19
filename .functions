@@ -83,54 +83,54 @@ proj() {
     fi
 }
 
-# Wrap function body in () to create a sub-shell. This allows us to exit without
-# closing the terminal in the process. Idea taken from here:
-# https://stackoverflow.com/questions/32684119/exit-when-one-process-in-pipe-fails
-sqlb() {(
-    # Exit function on any error
-    set -e
+# oci cli has an order on which profile to use which is outlined here:
+# https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliconfigure.htm
+#
+# Precendence order:
+# 1. value specified in `--profile` argument
+# 2. value specified in the environment variable `OCI_CLI_PROFILE`
+# 3. value specified in the `default_profile` field in `OCI_CLI_SETTINGS` in the
+# `oci_cli_rc`` file
+# 4. DEFAULT profile specified `~/.oci/config`
+whichociprofile(){
+    python -c '''
+import configparser
+import os
 
-    # pipefail so when getting branch name, which we pipe to `tr`, if it fails
-    # i.e. not a branch, this process exits
-    set -o pipefail
+oci_cli_profile=os.environ.get("OCI_CLI_PROFILE")
+# Highested precedent is the environment variable
+if oci_cli_profile != None:
+    print(f"{oci_cli_profile} from environment variable OCI_CLI_PROFILE")
+    exit()
 
-    # Find which project I'm in. All my projects are in the folder `$HOME/Projects/Oracle`
-    # so we remove the start of the string using bash substring removal
-    proj_home="$HOME/Projects/Oracle"
-    proj_relative_path="${PWD#${proj_home}\/}"
+home = os.path.expanduser("~")
 
-    # This will give us something like:
-    # * foo
-    # * foo/source/plsql
-    # So use `cut` to remove the path delimiter (`/`) and get the first field (foo)
-    # This should give us the project name, which we later use to drive the connect
-    # string.
-    proj_name=$(echo $proj_relative_path | cut -d "/" -f1)
+oci_cli_rc_path = os.path.join(home, ".oci", "oci_cli_rc")
+oci_cli_rc = configparser.ConfigParser()
+oci_cli_rc.read(oci_cli_rc_path)
+try:
+    rc_default = oci_cli_rc["OCI_CLI_SETTINGS"]["default_profile"]
+    print(f"{rc_default} configured in {oci_cli_rc_path}")
+    exit()
+except KeyError:
+    pass
 
-    # Connect string is driven from folder/project name and branch name. For this
-    # to work, root folder (proj_name) must match as it is in cloudlab. Replace dashes
-    # with underscores - connect string won't use dashes.
-    branch_name=$(git rev-parse --abbrev-ref HEAD | tr "-" "_")
-    connect_string=$(echo "xgbu_ace_${proj_name}_${branch_name}")
-
-    # Use lowercase just to make things nicer.
-    connect_string=$(echo "${connect_string}" | tr "[:upper:]" "[:lower:]")
-
-    printf "sql ${G_ACDC_SCHEMA}@${connect_string}\n"
-
-    # $* - pass any additional arguments I passed when calling the function
-    # We need to split this into a conditional because SQLcl still treats it as
-    # a value even if an empty string is passed in and it throws an error trying
-    # to connect.
-    if [[ "$*" != "" ]]
-    then
-        sql -L ${G_ACDC_SCHEMA}/${G_ACDC_SCHEMA_PASSWORD}@${connect_string} "$*"
-    else
-        sql -L ${G_ACDC_SCHEMA}/${G_ACDC_SCHEMA_PASSWORD}@${connect_string}
-    fi
-)}
+oci_config_path = os.path.join(home, ".oci", "config")
+oci_config = configparser.ConfigParser()
+oci_config.read(oci_config_path)
+try:
+    # Check a property inside default. For some reason, even if I did not have
+    # a DEFAULT config, it was still returning a section - so check for one of
+    # the keys we expect to be there
+    oci_config["DEFAULT"]["user"]
+    print(f"DEFAULT from {oci_config_path}")
+except KeyError:
+    print("No profile path to use. Must specify --profile to use one of your profiles")
+    '''
+}
 
 ocisearch_secret(){
+    printf "Using profile %s\n" "$(whichociprofile)"
     local displayName="$1"
 
     if [[ ! -z "$displayName" ]]
@@ -145,6 +145,7 @@ ocisearch_secret(){
 }
 
 ocisearch_adb(){
+    printf "Using profile %s\n" "$(whichociprofile)"
     local displayName="$1"
 
     if [[ ! -z "$displayName" ]]
