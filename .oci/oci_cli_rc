@@ -1,6 +1,3 @@
-[OCI_CLI_SETTINGS]
-default_profile=gbucdsint
-
 [OCI_CLI_COMMAND_ALIASES]
 ls = list
 
