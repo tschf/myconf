@@ -1,6 +1,6 @@
 
 # Custom files configuration
-for file in ~/.{functions,env,private_env,aliases,sql_aliases}
+for file in ~/.{functions,work_functions,env,private_env,aliases,work_aliases,sql_aliases}
 do
 
     if [[ -f $file ]] && [[ -r $file ]]
