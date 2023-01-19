@@ -162,3 +162,51 @@ ocisearch_adb(){
         printf "No search string specified\n" >&2
     fi
 }
+
+# Designed around you having a text file with the list of secret ocids. Call this
+# function: ocivault_rm secrets.txt
+ocivault_rm(){
+    file=$1
+    printf "Using profile %s\n" "$(whichociprofile)"
+    printf "Removing secrets in file (preview below): \"%s\"\n" "$file"
+
+    cat "$file"
+
+    echo
+    read -p "Proceed with deletion (y to proceed)? " -n 1 -r
+    echo
+
+    if [[ "$REPLY" != "y" ]]
+    then
+        return
+    fi
+
+    # Secrets are "scheduled" to be deleted. 1 day seemed to be a sweet spot to
+    # delete
+    deleteTime=$(date -d "+1 day" -u --rfc-3339=second)
+
+    # Expect one secret ocid per line
+    for secret in $(cat "$file")
+    do
+        # Could be a blank line, so make sure there's a value inside
+        if [[ "$secret" != "" ]]
+        then
+            oci vault secret schedule-secret-deletion --secret-id "$secret" --time-of-deletion "$deleteTime" >/dev/null
+        fi
+
+        # If the previous rest call returned a non-zero exit code, don't continue
+        # processing.
+        if [[ "$?" != "0" ]]
+        then
+            printf "Error deleting secret %s\n" "$secret" >&2
+            printf "Exiting\n" >&2
+            return 1
+        else
+            # Show the processed record so we know where to pick up from if one
+            # failed.
+            printf "Processed: %s\n" "$secret"
+        fi
+    done
+
+    printf "DONE\n"
+}
