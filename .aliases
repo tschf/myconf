@@ -7,7 +7,6 @@ alias prettyjson='python -m json.tool'
 alias prettyxml='xmllint --format -'
 alias path='echo -e ${PATH//:/\\n}'
 alias svnnew='svn status | grep ^?'
-alias dockervols='cd /home/trent/.local/share/containers/storage/volumes/'
 # pkgfiles - suffix package name at the end
 # e.g. `pkgfiles git-credential-libsecret``
 alias pkgfiles='dnf repoquery --installed -l'
@@ -23,3 +22,7 @@ alias dnfrecent='dnf history | head -n 7'
 # in memory, then re-read the file. Use case for this is you have 2 tabs.
 # 1. Sync tab 2; 2. Sync tab 1. You should then have everything there in tab 1.
 alias histsync='history -a; history -c; history -r'
+
+# Containers
+alias dockervols='cd /home/trent/.local/share/containers/storage/volumes/'
+alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
