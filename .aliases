@@ -19,3 +19,7 @@ alias wifipassword='nmcli device wifi show-password'
 # Show the 5 most recent actions. 7 = 2 for header + 5 for data
 # Get more details with `dnf history info n` for a given entry
 alias dnfrecent='dnf history | head -n 7'
+# 3 actions - append the current buffer to the history file. Clear the history
+# in memory, then re-read the file. Use case for this is you have 2 tabs.
+# 1. Sync tab 2; 2. Sync tab 1. You should then have everything there in tab 1.
+alias histsync='history -a; history -c; history -r'
