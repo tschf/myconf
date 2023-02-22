@@ -7,17 +7,12 @@ alias prettyjson='python -m json.tool'
 alias prettyxml='xmllint --format -'
 alias path='echo -e ${PATH//:/\\n}'
 alias svnnew='svn status | grep ^?'
-# pkgfiles - suffix package name at the end
 # e.g. `pkgfiles git-credential-libsecret``
-alias pkgfiles='dnf repoquery --installed -l'
 alias httpserve='python -m http.server'
 alias sql='sql -L'
 alias liquibase='liquibase --show-banner=false'
 alias k='kubectl'
 alias wifipassword='nmcli device wifi show-password'
-# Show the 5 most recent actions. 7 = 2 for header + 5 for data
-# Get more details with `dnf history info n` for a given entry
-alias dnfrecent='dnf history | head -n 7'
 # 3 actions - append the current buffer to the history file. Clear the history
 # in memory, then re-read the file. Use case for this is you have 2 tabs.
 # 1. Sync tab 2; 2. Sync tab 1. You should then have everything there in tab 1.
@@ -26,3 +21,10 @@ alias histsync='history -a; history -c; history -r'
 # Containers
 alias dockervols='cd /home/trent/.local/share/containers/storage/volumes/'
 alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
+
+# Package manager
+# Show the 5 most recent actions. 7 = 2 for header + 5 for data
+# Get more details with `dnf history info n` for a given entry
+alias dnfrecent='dnf history | head -n 7'
+# pkgfiles - suffix package name at the end
+alias pkgfiles='dnf repoquery --installed -l'
