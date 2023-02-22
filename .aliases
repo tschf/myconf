@@ -18,7 +18,7 @@ alias wifipassword='nmcli device wifi show-password'
 alias histsync='history -a; history -c; history -r'
 
 # Containers
-alias dockervols='cd /home/trent/.local/share/containers/storage/volumes/'
+alias podmanvols='cd /home/trent/.local/share/containers/storage/volumes/'
 alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
 alias k='kubectl'
 alias m='minikube'
