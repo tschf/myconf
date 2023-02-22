@@ -11,7 +11,6 @@ alias svnnew='svn status | grep ^?'
 alias httpserve='python -m http.server'
 alias sql='sql -L'
 alias liquibase='liquibase --show-banner=false'
-alias k='kubectl'
 alias wifipassword='nmcli device wifi show-password'
 # 3 actions - append the current buffer to the history file. Clear the history
 # in memory, then re-read the file. Use case for this is you have 2 tabs.
@@ -21,6 +20,8 @@ alias histsync='history -a; history -c; history -r'
 # Containers
 alias dockervols='cd /home/trent/.local/share/containers/storage/volumes/'
 alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
+alias k='kubectl'
+alias m='minikube'
 
 # Package manager
 # Show the 5 most recent actions. 7 = 2 for header + 5 for data
