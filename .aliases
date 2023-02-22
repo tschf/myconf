@@ -22,6 +22,7 @@ alias podmanvols='cd /home/trent/.local/share/containers/storage/volumes/'
 alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
 alias k='kubectl'
 alias m='minikube'
+alias mupdate='cd /tmp; curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64; sudo install minikube-linux-amd64 /usr/local/bin/minikube; minikube version; back'
 
 # Package manager
 # Show the 5 most recent actions. 7 = 2 for header + 5 for data
