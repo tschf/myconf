@@ -3,10 +3,11 @@
 [push]
 	default = current
 [alias]
-	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	addall = !git add . && git commit
-        padd = add -p
-        diffdir = !git difftool -t meld --dir-diff
+    diffdir = !git difftool -t meld --dir-diff
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    padd = add -p
+    statuslong = status --long
 [core]
 	excludesfile = ~/.gitignore
 [diff]
@@ -23,4 +24,12 @@
 [init]
 	defaultBranch = main
 [help]
-	autocorrect = 1
+    # The number represents 1/10th of a seconds. So 30 = 3 seconds
+    # This will autocorrect and run after the specified interval
+    # e.g. git staatus -> git status will run after the period
+	autocorrect = 30
+[log]
+	abbrevCommit = true
+[status]
+	short = true
+	branch = true
