@@ -23,6 +23,8 @@ alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
 alias k='kubectl'
 alias m='minikube'
 alias mupdate='cd /tmp; curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64; sudo install minikube-linux-amd64 /usr/local/bin/minikube; minikube version; back'
+# From the install docs, method 2: https://helm.sh/docs/intro/install/
+alias helmupdate='cd /tmp; curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod +x get_helm.sh && ./get_helm.sh && back'
 
 # Package manager
 # Show the 5 most recent actions. 7 = 2 for header + 5 for data
