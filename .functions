@@ -210,3 +210,8 @@ ocivault_rm(){
 
     printf "DONE\n"
 }
+
+filesize(){
+    fn=$1
+    stat -c %s "$fn" | numfmt --to=iec
+}
