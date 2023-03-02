@@ -3,3 +3,10 @@ $include /etc/inputrc
 # enable partial history search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+
+# Autocomplete should work if the case doesn't match
+set completion-ignore-case on
+
+# If I've written cd Down and have the cursor on the w and hit tab, the
+# completion will not re-type letters already there
+set skip-completed-text on
