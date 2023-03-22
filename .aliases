@@ -32,3 +32,5 @@ alias helmupdate='cd /tmp; curl -fsSL -o get_helm.sh https://raw.githubuserconte
 alias dnfrecent='dnf history | head -n 7'
 # pkgfiles - suffix package name at the end
 alias pkgfiles='dnf repoquery --installed -l'
+
+alias t='terraform'
