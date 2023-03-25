@@ -16,6 +16,13 @@ alias wifipassword='nmcli device wifi show-password'
 # in memory, then re-read the file. Use case for this is you have 2 tabs.
 # 1. Sync tab 2; 2. Sync tab 1. You should then have everything there in tab 1.
 alias histsync='history -a; history -c; history -r'
+alias diskusage='df -P -kHl /'
+alias filestats='stat -f'
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+    alias "$method"="lwp-request -m \"$method\""
+done
 
 # Containers
 alias podmanvols='cd /home/trent/.local/share/containers/storage/volumes/'
