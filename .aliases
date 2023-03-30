@@ -4,6 +4,7 @@ alias ....='cd ../../..'
 alias back='cd - > /dev/null'
 alias cd..='cd ..'
 alias diskusage='df -P -kHl /'
+alias epoch='date +%s'
 alias filestats='stat -f'
 # 3 actions - append the current buffer to the history file. Clear the history
 # in memory, then re-read the file. Use case for this is you have 2 tabs.
