@@ -4,10 +4,10 @@ alias ....='cd ../../..'
 alias back='cd - > /dev/null'
 alias cd..='cd ..'
 alias diskusage='df -P -kHl /'
+alias filestats='stat -f'
 # 3 actions - append the current buffer to the history file. Clear the history
 # in memory, then re-read the file. Use case for this is you have 2 tabs.
 # 1. Sync tab 2; 2. Sync tab 1. You should then have everything there in tab 1.
-alias filestats='stat -f'
 alias histsync='history -a; history -c; history -r'
 alias httpserve='python -m http.server'
 alias liquibase='liquibase --show-banner=false'
