@@ -1,34 +1,43 @@
-alias back='cd - > /dev/null'
-alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias prettyjson='python -m json.tool'
-alias prettyxml='xmllint --format -'
-alias path='echo -e ${PATH//:/\\n}'
-alias svnnew='svn status | grep ^?'
-# e.g. `pkgfiles git-credential-libsecret``
-alias httpserve='python -m http.server'
-alias sql='sql -L'
-alias liquibase='liquibase --show-banner=false'
-alias wifipassword='nmcli device wifi show-password'
+alias back='cd - > /dev/null'
+alias cd..='cd ..'
+alias diskusage='df -P -kHl /'
+alias epoch='date +%s'
+alias filestats='stat -f'
 # 3 actions - append the current buffer to the history file. Clear the history
 # in memory, then re-read the file. Use case for this is you have 2 tabs.
 # 1. Sync tab 2; 2. Sync tab 1. You should then have everything there in tab 1.
 alias histsync='history -a; history -c; history -r'
+alias httpserve='python -m http.server'
+alias liquibase='liquibase --show-banner=false'
+alias path='echo -e ${PATH//:/\\n}'
+alias prettyjson='python -m json.tool'
+alias prettyxml='xmllint --format -'
+alias sql='sql -L'
+alias svnnew='svn status | grep ^?'
+alias t='terraform'
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias wifipassword='nmcli device wifi show-password'
+
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+    alias "$method"="lwp-request -m \"$method\""
+done
 
 # Containers
-alias podmanvols='cd /home/trent/.local/share/containers/storage/volumes/'
+# From the install docs, method 2: https://helm.sh/docs/intro/install/
+alias helmupdate='cd /tmp; curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod +x get_helm.sh && ./get_helm.sh && back'
+alias k='kubectl'
+alias m='minikube'
+alias mupdate='cd /tmp; curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64; sudo install minikube-linux-amd64 /usr/local/bin/minikube; minikube version; back'
 alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
 # Sometimes you face the issue where you can't remove an image because it says
 # it's in use by a container, but podman container ls --all returns nothing.
 # Adding the storage will find this danging containers.
 alias podmanlsdanging='podman ps --all --storage'
-alias k='kubectl'
-alias m='minikube'
-alias mupdate='cd /tmp; curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64; sudo install minikube-linux-amd64 /usr/local/bin/minikube; minikube version; back'
-# From the install docs, method 2: https://helm.sh/docs/intro/install/
-alias helmupdate='cd /tmp; curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod +x get_helm.sh && ./get_helm.sh && back'
+alias podmanvols='cd /home/trent/.local/share/containers/storage/volumes/'
 
 # Package manager
 # Show the 5 most recent actions. 7 = 2 for header + 5 for data
@@ -36,5 +45,3 @@ alias helmupdate='cd /tmp; curl -fsSL -o get_helm.sh https://raw.githubuserconte
 alias dnfrecent='dnf history | head -n 7'
 # pkgfiles - suffix package name at the end
 alias pkgfiles='dnf repoquery --installed -l'
-
-alias t='terraform'
