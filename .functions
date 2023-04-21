@@ -183,7 +183,10 @@ ocivault_rm(){
 
     # Secrets are "scheduled" to be deleted. 1 day seemed to be a sweet spot to
     # delete
-    deleteTime=$(date -d "+26 hour" -u --rfc-3339=second)
+    # 21/4/23: Previous format "date -d "+1 day" -u --rfc-3339=second" but got bad
+    # input - trying with ISO8601 format (by the -I flag) to see if that gets same
+    # issue. Main difference being the "T" between the date and time.
+    deleteTime=$(date -d "+1 day" -Iseconds -u)
 
     # Expect one secret ocid per line
     for secret in $(cat "$file")
