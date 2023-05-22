@@ -20,6 +20,8 @@ alias sql='sql -L'
 alias svnnew='svn status | grep ^?'
 alias t='terraform'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+# Use bash instead of sh so we can use aliases. Put command in quotes
+alias watch='watch -x bash -ic'
 alias wifipassword='nmcli device wifi show-password'
 
 # One of @janmoesen’s ProTip™s
