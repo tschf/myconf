@@ -77,4 +77,9 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "vsicons.dontShowNewVersionMessage": true,
     "terminal.integrated.shellIntegration.enabled": false,
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.quickSuggestions": {
+        "other": "off"
+    }
 }
