@@ -9,6 +9,7 @@
     padd = add -p
     statuslong = status --long
     prune-sync = !git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+    generic-commit = !git add . && git commit -m "Update" && git push
 [core]
 	excludesfile = ~/.gitignore
 [diff]
