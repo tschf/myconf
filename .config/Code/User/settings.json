@@ -3,6 +3,17 @@
     "workbench.colorTheme": "Visual Studio Light",
     "editor.renderWhitespace": "all",
     "editor.trimAutoWhitespace": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope":"constant.character.escape",
+                "settings": {
+                    "foreground": "#008000",
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
     "files.trimTrailingWhitespace": true,
     "editor.minimap.enabled": false,
     "extensions.ignoreRecommendations": false,

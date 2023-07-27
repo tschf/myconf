@@ -4,10 +4,12 @@
     default = current
 [alias]
     addall = !git add . && git commit
-    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     diffdir = !git difftool -t meld --dir-diff
     generic-commit = !git add . && git commit -m "Update" && git push
     grep = grep -I
+    lg = log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lggraph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lgmerges = log --abbrev-commit --decorate --format=format:'* %B' --merges
     padd = add -p
     prune-sync = !git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
     statuslong = status --long
