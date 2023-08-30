@@ -75,7 +75,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "window.restoreWindows": "none",
     "terminal.integrated.enableShellIntegration": true,
-    "editor.fontFamily": "'SauceCodePro Nerd Font Mono', 'SauceCodePro Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'IntoneMono Nerd Font Mono', 'SauceCodePro Nerd Font Mono', 'SauceCodePro Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontSize": 16,
     "code-eol.newlineCharacter": "¬",
     "code-eol.returnCharacter" : "¤",
