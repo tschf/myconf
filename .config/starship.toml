@@ -2,6 +2,7 @@
 format = """
 [╭─](bold blue)$username\
 $hostname\
+$sudo\
 $jobs\
 $shlvl\
 $kubernetes\
@@ -55,6 +56,8 @@ $status\
 $shell\
 $character"""
 
+"$schema" = 'https://starship.rs/config-schema.json'
+
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
 
@@ -97,6 +100,10 @@ disabled = false
 
 [python]
 symbol = " "
+
+[sudo]
+disabled = false
+symbol = '🐊 '
 
 # Replace the "❯" symbol in the prompt with "➜"
 # [character]                            # The name of the module we are configuring is "character"
