@@ -27,6 +27,7 @@ $julia\
 $kotlin\
 $nim\
 $nodejs\
+$bun\
 $ocaml\
 $perl\
 $php\
@@ -63,6 +64,12 @@ scan_timeout = 10
 
 # Disable the blank line at the start of the prompt
 add_newline = false
+
+[nodejs]
+version_format="v${major}.${minor}"
+
+[bun]
+format = 'via [🥖 $version](bold red) '
 
 [character]
 success_symbol = "[╰>](bold blue)"
