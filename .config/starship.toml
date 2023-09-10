@@ -50,6 +50,7 @@ $env_var\
 $crystal\
 $custom\
 $cmd_duration\
+$os\
 $line_break\
 $lua\
 $time\
@@ -64,6 +65,10 @@ scan_timeout = 10
 
 # Disable the blank line at the start of the prompt
 add_newline = false
+
+[os]
+disabled = true
+format = '\(on [$name $version]($style)\)'
 
 [nodejs]
 version_format="v${major}.${minor}"
