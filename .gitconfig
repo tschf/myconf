@@ -12,6 +12,7 @@
     lgmerges = log --abbrev-commit --decorate --format=format:'* %B' --merges
     padd = add -p
     prune-sync = !git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+    rmunstaged = clean -df
     statuslong = status --long
 [core]
     excludesfile = ~/.gitignore
