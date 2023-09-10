@@ -87,6 +87,10 @@ ssh_only = false
 format =  "[@$hostname ](green bold)"
 disabled = false
 
+[java]
+symbol = " "
+style = "green bold"
+
 [jobs]
 disabled = true
 
