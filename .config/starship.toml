@@ -89,7 +89,8 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format =  "[@$hostname ](green bold)"
+format =  "[@$hostname ](green bold)[$ssh_symbol](white bold)"
+ssh_symbol = "󱐋 "
 disabled = false
 
 [java]
