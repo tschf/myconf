@@ -71,7 +71,7 @@
         "socketPath": "/run/user/1000/podman/podman.sock"
     },
     "redhat.telemetry.enabled": true,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "security.workspace.trust.untrustedFiles": "open",
     "window.restoreWindows": "none",
     "terminal.integrated.enableShellIntegration": true,
