@@ -92,5 +92,9 @@
     "editor.copyWithSyntaxHighlighting": false,
     "editor.quickSuggestions": {
         "other": "off"
-    }
+    },
+    "eslint.ignoreUntitled": true,
+    "yaml.customTags": [
+        "!reference sequence"
+    ]
 }
