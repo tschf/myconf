@@ -150,14 +150,21 @@ ocisearch_adb(){
 
     if [[ ! -z "$displayName" ]]
     then
-        oci search resource structured-search \
-            --query-text "query autonomousdatabase resources where (displayName =~ '${displayName}') sorted by lifecycleState asc" \
+
+        local header="id\tname\tstate\n"
+        header+="============================================================================\t==============================\t====================\n"
+
+        adbData=$(oci search resource structured-search \
+            --query-text "query autonomousdatabase resources where (displayName =~ '${displayName}')" \
             --query "data.items[*].{
                 name:\"display-name\",
                 id:identifier,
                 state:\"lifecycle-state\"
-            }" \
-            --output table
+            }" | jq -r "sort_by(.state, .name) | .[] | [.id, .name, .state] | @tsv")
+
+        headerAndData="${header}${adbData}\n"
+        printf "\n"
+        printf "\n%b\n" "${headerAndData}" | column -t
     else
         printf "No search string specified\n" >&2
     fi
