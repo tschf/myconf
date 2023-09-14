@@ -151,7 +151,7 @@ ocisearch_adb(){
     if [[ ! -z "$displayName" ]]
     then
         oci search resource structured-search \
-            --query-text "query autonomousdatabase resources where (displayName =~ '${displayName}') sorted by displayName asc" \
+            --query-text "query autonomousdatabase resources where (displayName =~ '${displayName}') sorted by lifecycleState asc" \
             --query "data.items[*].{
                 name:\"display-name\",
                 id:identifier,
