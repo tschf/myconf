@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.colorTheme": "GitHub Light Default",
     "editor.renderWhitespace": "all",
     "editor.trimAutoWhitespace": true,
     "editor.tokenColorCustomizations": {
