@@ -88,6 +88,11 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "vsicons.dontShowNewVersionMessage": true,
     "terminal.integrated.shellIntegration.enabled": false,
+    "java.saveActions.organizeImports": true,
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true
+    },
+    "git.suggestSmartCommit": false,
     "editor.unicodeHighlight.nonBasicASCII": true,
     "editor.copyWithSyntaxHighlighting": false,
     "editor.quickSuggestions": {
