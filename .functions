@@ -129,6 +129,37 @@ except KeyError:
     '''
 }
 
+# With some given input (via standard input), print it in tabular format
+# [
+#     {
+#         "field1": "foo",
+#         "field2": "bar"
+#     }
+# ]
+# Prints as:
+# +--------+--------+
+# | field1 | field2 |
+# +--------+--------+
+# |  foo   |  bar   |
+# +--------+--------+
+print_json_table(){
+    python -c '''
+import prettytable, json, sys
+
+# Process input
+jsonData = json.load(sys.stdin)
+first_rec = jsonData[0]
+flattedRecs = [list(d.values()) for d in jsonData]
+
+# Prepare for printing
+datatable = prettytable.PrettyTable()
+datatable.field_names = first_rec.keys()
+datatable.add_rows(flattedRecs)
+
+print(datatable)
+    '''
+}
+
 ocisearch_secret(){
     printf "Using profile %s\n" "$(whichociprofile)"
     local displayName="$1"
@@ -151,20 +182,29 @@ ocisearch_adb(){
     if [[ ! -z "$displayName" ]]
     then
 
-        local header="id\tname\tstate\n"
-        header+="============================================================================\t==============================\t====================\n"
-
+        # Usually, we would append the `--output table` to the oci cli command
+        # but I want to sort by state and then name, but the cli only supportes
+        # sorting by one field (either via the --query-text statement or the
+        # --query clause). So we are deferring to `jq` to do the sorting since
+        # it accepts more than one sort field.
         adbData=$(oci search resource structured-search \
             --query-text "query autonomousdatabase resources where (displayName =~ '${displayName}')" \
             --query "data.items[*].{
                 name:\"display-name\",
                 id:identifier,
                 state:\"lifecycle-state\"
-            }" | jq -r "sort_by(.state, .name) | .[] | [.id, .name, .state] | @tsv")
+            }")
 
-        headerAndData="${header}${adbData}\n"
-        printf "\n"
-        printf "\n%b\n" "${headerAndData}" | column -t
+        # On no matches, oci cli prints a message into the error stream and
+        # standard out is blank. If its not blank it likely means we can a result
+        # set back
+        if [[ "${adbData}" != "" ]]
+        then
+            # By default sort is by create date. It's easier to read a lot of
+            # results when they are grouped by state and then by name.
+            sortedAdbData=$(jq -r "sort_by(.state, .name)" <<< "${adbData}")
+            echo "${sortedAdbData}" | print_json_table
+        fi
     else
         printf "No search string specified\n" >&2
     fi
