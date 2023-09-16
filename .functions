@@ -63,6 +63,8 @@ svnlog() {
 
 }
 
+# Remove the `-s` flag to get the size of each thing inside the specified
+# directory.
 dirsize(){
     du -hs "$1" | awk '{print $1}'
 }
