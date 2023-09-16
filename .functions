@@ -63,6 +63,10 @@ svnlog() {
 
 }
 
+dirsize(){
+    du -hs "$1" | awk '{print $1}'
+}
+
 sqlplus() {
     # All arg options:
     # - $*
