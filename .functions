@@ -63,10 +63,16 @@ svnlog() {
 
 }
 
-# Remove the `-s` flag to get the size of each thing inside the specified
-# directory.
+# Get the size of the specified folder only
 dirsize(){
     du -hs "$1" | awk '{print $1}'
+}
+
+# Show the file size of each thing inside that folder. Reverse the order so largest
+# folders appear first. Skip the first line (via tail command) so it doesn't output
+# the folder itself.
+dirfilesize(){
+    du -h --max-depth 1 "$1" | sort -rh | tail -n +2
 }
 
 sqlplus() {
