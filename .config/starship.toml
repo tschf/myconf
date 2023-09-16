@@ -116,7 +116,7 @@ only_attached = false
 disabled = false
 
 [python]
-symbol = " "
+symbol = " "
 
 [sudo]
 disabled = false
