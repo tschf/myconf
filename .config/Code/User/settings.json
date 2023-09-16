@@ -80,7 +80,7 @@
     "code-eol.newlineCharacter": "¬",
     "code-eol.returnCharacter" : "¤",
     "code-eol.crlfCharacter": "¤¬",
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 20,
     "vs-kubernetes": {
         "vscode-kubernetes.minikube-path.linux": "/home/trent/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
     },
