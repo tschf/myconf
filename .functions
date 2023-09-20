@@ -152,7 +152,7 @@ except KeyError:
 # +--------+--------+
 # | field1 | field2 |
 # +--------+--------+
-# |  foo   |  bar   |
+# | foo    | bar    |
 # +--------+--------+
 print_json_table(){
     python -c '''
@@ -165,6 +165,7 @@ flattedRecs = [list(d.values()) for d in jsonData]
 
 # Prepare for printing
 datatable = prettytable.PrettyTable()
+datatable.align = "l"
 datatable.field_names = first_rec.keys()
 datatable.add_rows(flattedRecs)
 
