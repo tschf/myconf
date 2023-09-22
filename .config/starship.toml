@@ -122,6 +122,13 @@ symbol = " "
 disabled = false
 symbol = '🐊 '
 
+[shlvl]
+disabled=false
+repeat_offset=1
+repeat=true
+threshold = 3
+format = "[$symbol]($style) "
+
 # Replace the "❯" symbol in the prompt with "➜"
 # [character]                            # The name of the module we are configuring is "character"
 # success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
