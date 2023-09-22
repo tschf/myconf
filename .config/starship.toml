@@ -66,6 +66,9 @@ scan_timeout = 10
 # Disable the blank line at the start of the prompt
 add_newline = false
 
+# Continuation prompt is the character that appears on a new line. e.g. an un-closed
+# quote or a multi-line command (when you add `\` at the end of the line. More
+# info here: https://starship.rs/advanced-config/#continuation-prompt
 continuation_prompt = "[➜](bright-black) "
 
 [os]
