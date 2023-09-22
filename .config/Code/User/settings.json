@@ -101,5 +101,8 @@
     "eslint.ignoreUntitled": true,
     "yaml.customTags": [
         "!reference sequence"
-    ]
+    ],
+    "terminal.integrated.env.linux": {
+        "SHLVL": "1"
+    }
 }
