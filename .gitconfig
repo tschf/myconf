@@ -11,7 +11,7 @@
     lggraph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lgmerges = log --abbrev-commit --decorate --format=format:'* %B' --merges
     padd = add -p
-    prune-sync = "!git fetch -p && git branch --format '%(refname:short) %(upstream)' | awk '{if (!$2) print $1;}'" | xargs git branch -D
+    prune-sync = "!git fetch -p && git branch --format '%(refname:short) %(upstream)' | awk '{if (!$2) print $1;}'" | xargs -r git branch -D
     rmunstaged = clean -df
     statuslong = status --long
 [core]
