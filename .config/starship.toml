@@ -66,6 +66,11 @@ scan_timeout = 10
 # Disable the blank line at the start of the prompt
 add_newline = false
 
+# Continuation prompt is the character that appears on a new line. e.g. an un-closed
+# quote or a multi-line command (when you add `\` at the end of the line. More
+# info here: https://starship.rs/advanced-config/#continuation-prompt
+continuation_prompt = "[➜](bright-black) "
+
 [os]
 disabled = true
 format = '\(on [$name $version]($style)\)'
@@ -121,6 +126,13 @@ symbol = " "
 [sudo]
 disabled = false
 symbol = '🐊 '
+
+[shlvl]
+disabled=false
+repeat_offset=1
+repeat=true
+threshold = 3
+format = "[$symbol]($style) "
 
 # Replace the "❯" symbol in the prompt with "➜"
 # [character]                            # The name of the module we are configuring is "character"
