@@ -200,6 +200,10 @@ ocisearch_adb(){
         # sorting by one field (either via the --query-text statement or the
         # --query clause). So we are deferring to `jq` to do the sorting since
         # it accepts more than one sort field.
+        #
+        # Found that if you rename on object it doesn't reflect striaght away in
+        # search until restarting the resource. So old one is kept in cache somewhere.
+        # The raw object search doesn't face this issue.
         adbData=$(oci search resource structured-search \
             --query-text "query autonomousdatabase resources where (displayName =~ '${displayName}')" \
             --query "data.items[*].{
@@ -207,6 +211,13 @@ ocisearch_adb(){
                 id:identifier,
                 state:\"lifecycle-state\"
             }")
+        # The adb list approach - seems to take 5x as long
+        # adbData=$(oci db autonomous-database list --all \
+        #     --query "data[?contains(\"display-name\", '${displayName}')].{
+        #         name:\"display-name\",
+        #         id:id,
+        #         state:\"lifecycle-state\"
+        #     }")
 
         # On no matches, oci cli prints a message into the error stream and
         # standard out is blank. If its not blank it likely means we can a result
