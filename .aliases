@@ -25,6 +25,7 @@ alias t='terraform'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias untar='tar xvf'
 # Use bash instead of sh so we can use aliases. Put command in quotes
+# TODO: watch -x bash -ic "trap 'exit' SIGINT; ls -Alt"
 alias watch='watch -x bash -ic'
 alias wifipassword='nmcli device wifi show-password'
 
