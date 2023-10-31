@@ -41,6 +41,7 @@ alias k='kubectl'
 alias m='minikube'
 alias mupdate='cd /tmp; curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64; sudo install minikube-linux-amd64 /usr/local/bin/minikube; minikube version; back'
 alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
+alias podmancls='podman container ls -a --format "table {{.ID}} {{.Image}} {{.RunningFor}} {{.Status}} {{.Names}}"'
 # Sometimes you face the issue where you can't remove an image because it says
 # it's in use by a container, but podman container ls --all returns nothing.
 # Adding the storage will find this danging containers.
