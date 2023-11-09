@@ -39,7 +39,7 @@ done
 alias helmupdate='cd /tmp; curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod +x get_helm.sh && ./get_helm.sh && back'
 alias k='kubectl'
 alias m='minikube'
-alias mupdate='cd /tmp; curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64; sudo install minikube-linux-amd64 /usr/local/bin/minikube; minikube version; back'
+alias mupdate='cd /tmp; curl -s https://api.github.com/repos/kubernetes/minikube/releases/latest | jq -r ".tag_name" | xargs -I {} curl -LO https://github.com/kubernetes/minikube/releases/download/{}/minikube-linux-amd64; sudo install minikube-linux-amd64 /usr/local/bin/minikube; minikube version; back'
 alias podmanbash='podman run -it --rm --entrypoint /bin/bash'
 alias podmancls='podman container ls -a --format "table {{.ID}} {{.Image}} {{.RunningFor}} {{.Status}} {{.Names}}"'
 # Sometimes you face the issue where you can't remove an image because it says
