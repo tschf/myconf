@@ -289,3 +289,21 @@ filesize(){
     fn=$1
     stat -c %s "$fn" | numfmt --to=iec
 }
+
+# Usage: sleep_time_in_secs 5h
+# Sample script:
+# current_time=$(date +%s)
+# secs_delay=$(sleep_time_in_secs 5m)
+# future_time=$(( current_time + secs_delay ))
+# date -d "@${future_time}"
+sleep_time_in_secs() {
+  input=$1
+
+  case $input in
+    *s) echo "${input%?}" ;;
+    *m) echo "$(( ${input%?} * 60 ))" ;;
+    *h) echo "$(( ${input%?} * 60 * 60 ))" ;;
+    *d) echo "$(( ${input%?} * 24 * 60 * 60 ))" ;;
+    *) echo "Invalid input" ;;
+  esac
+}
