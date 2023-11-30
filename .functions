@@ -182,7 +182,7 @@ ocisearch_secret(){
         oci search resource structured-search \
             --query-text "query vaultsecret resources where (displayName =~ '${displayName}')" \
             --output table \
-            --query "data.items[*].{id:identifier,name:\"display-name\"}"
+            --query "data.items[*].{id:identifier,name:\"display-name\", state: \"lifecycle-state\"}"
     else
         printf "No search string specified\n" >&2
     fi
