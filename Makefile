@@ -7,7 +7,7 @@ link:
 	@ln -sf $(realpath .functions) $(HOME)/.bashrc.d/functions;
 	@ln -sf $(realpath .aliases) $(HOME)/.bashrc.d/aliases;
 	@ln -sf $(realpath .env) $(HOME)/.bashrc.d/env;
-	@ln -sf $(realpath .inputrc) $(HOME)/inputrc;
+	@ln -sf $(realpath .inputrc) $(HOME)/.inputrc;
 
 	# Processing Git
 	@ln -sf $(realpath .gitconfig) $(HOME)/.gitconfig;
