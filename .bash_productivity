@@ -28,6 +28,9 @@ complete -C /usr/bin/terraform t
 # Get script by `oci setup autcomplete`
 [[ -e "$HOME/lib/oci_autocomplete.sh" ]] && source "$HOME/lib/oci_autocomplete.sh"
 
+# Bash default completions. Was called from .bashrc in OL8 but not in OL9
+. /usr/share/bash-completion/bash_completion
+
 # Starship is a tool to make configuring the bash prompt easy
 # From: https://starship.rs
 eval "$(starship init bash)"
