@@ -307,3 +307,10 @@ sleep_time_in_secs() {
     *) echo "Invalid input" ;;
   esac
 }
+
+# Set the kubernetes namespace for the current context
+kns() {
+    new_ns="$1"
+
+    kubectl config set-context --current --namespace="$new_ns"
+}
