@@ -104,5 +104,6 @@
     ],
     "terminal.integrated.env.linux": {
         "SHLVL": "1"
-    }
+    },
+    "gremlins.showInProblemPane": true,
 }
