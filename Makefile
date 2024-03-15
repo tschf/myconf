@@ -3,10 +3,11 @@ link: code_data_path=.config/Code/User
 link:
 	@mkdir -p $(HOME)/.bashrc.d; \
 	# Processing bash (aliases, functions, env, inputrc)
+	@# env prefixed with `0` so it runs first when the loop is looking at all files
+	@ln -sf $(realpath .env) $(HOME)/.bashrc.d/0env;
 	@ln -sf $(realpath .bash_productivity) $(HOME)/.bashrc.d/bash_productivity;
 	@ln -sf $(realpath .functions) $(HOME)/.bashrc.d/functions;
 	@ln -sf $(realpath .aliases) $(HOME)/.bashrc.d/aliases;
-	@ln -sf $(realpath .env) $(HOME)/.bashrc.d/env;
 	@ln -sf $(realpath .inputrc) $(HOME)/.inputrc;
 
 	# Processing Git
