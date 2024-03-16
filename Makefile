@@ -28,6 +28,9 @@ link:
 	# Processing OCI
 	@ln -sf $$HOME/Projects/myconf/.oci/oci_cli_rc $$HOME/.oci/oci_cli_rc;
 
+	# Process minikube config
+	@ln -sf $(realpath .minikube/config/config.json) $(HOME)/.minikube/config/config.json;
+
 	# Processing Custom Binaries
 	@mkdir -p $(HOME)/bin;
 	@ln -sf $$HOME/Projects/myip/myip $$HOME/bin/myip;
