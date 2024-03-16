@@ -8,6 +8,7 @@ $shlvl\
 $kubernetes\
 $directory\
 $git_branch\
+${custom.git_user}\
 $git_commit\
 $git_state\
 $git_status\
@@ -48,7 +49,6 @@ $gcloud\
 $openstack\
 $env_var\
 $crystal\
-$custom\
 $cmd_duration\
 $os\
 $line_break\
@@ -119,6 +119,11 @@ style = "purple bold"
 truncation_symbol = "…"
 only_attached = false
 disabled = false
+
+[custom.git_user]
+command = 'git config user.email'
+when = "git rev-parse --git-dir 2> /dev/null"
+format = "as [$output]($style) "
 
 [python]
 symbol = " "
