@@ -312,5 +312,11 @@ sleep_time_in_secs() {
 kns() {
     new_ns="$1"
 
+    if ! kubectl get ns "$new_ns" > /dev/null 2>&1
+    then
+        printf "Namespace %s not found in current cluster\n" "$new_ns"
+        return 1
+    fi
+
     kubectl config set-context --current --namespace="$new_ns"
 }
