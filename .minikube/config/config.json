@@ -1,4 +1,4 @@
 {
-  "driver": "podman",
-  "rootless": true
+    "driver": "podman",
+    "rootless": false
 }
