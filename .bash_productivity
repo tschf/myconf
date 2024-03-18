@@ -36,5 +36,5 @@ complete -C /usr/bin/terraform t
 eval "$(starship init bash)"
 
 # Atuin is a better reverse history search tool
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+# [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash --disable-up-arrow)"
