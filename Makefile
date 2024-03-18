@@ -31,6 +31,10 @@ link:
 	# Process minikube config
 	@ln -sf $(realpath .minikube/config/config.json) $(HOME)/.minikube/config/config.json;
 
+	# Process atuin config
+	@mkdir -p $(HOME)/.config/atuin
+	@ln -sf $(realpath .config/atuin/config.toml) $(HOME)/.config/atuin/config.toml
+
 	# Processing Custom Binaries
 	@mkdir -p $(HOME)/bin;
 	@ln -sf $$HOME/Projects/myip/myip $$HOME/bin/myip;
