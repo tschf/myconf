@@ -1,1 +1,5 @@
+# By default, enter runs the command. I don't like that - bring the command to
+# the foreground so it can be further edited before running it.
 enter_accept = false
+
+filter_mode = "session"
