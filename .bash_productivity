@@ -35,6 +35,10 @@ complete -C /usr/bin/terraform t
 # From: https://starship.rs
 eval "$(starship init bash)"
 
-# Atuin is a better reverse history search tool
-# [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+# Atuin is a better reverse history search tool. Unfortunately, unlike all other
+# shells you need to use a pre-exec plugin. The major drawback of this is that
+# it doesn't support `ignorespace`. While atuin won't add stuff with a space in front
+# the command will still end up in your .bash_history file.
+# See this note: https://forum.atuin.sh/t/atuin-bash-and-ble-sh/175
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash --disable-up-arrow)"
