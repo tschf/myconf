@@ -103,7 +103,7 @@
         "!reference sequence"
     ],
     "terminal.integrated.env.linux": {
-        "SHLVL": "1"
+        "SHLVL": "0"
     },
     "gremlins.showInProblemPane": true,
 }
