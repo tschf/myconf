@@ -40,5 +40,7 @@ eval "$(starship init bash)"
 # it doesn't support `ignorespace`. While atuin won't add stuff with a space in front
 # the command will still end up in your .bash_history file.
 # See this note: https://forum.atuin.sh/t/atuin-bash-and-ble-sh/175
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash --disable-up-arrow)"
+# [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+# eval "$(atuin init bash --disable-up-arrow)"
+
+source /usr/share/fzf/shell/key-bindings.bash
