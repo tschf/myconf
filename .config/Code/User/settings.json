@@ -118,4 +118,10 @@
     "thunder-client.sidebar.showActivityFromCollection": true,
     "thunder-client.sidebar.defaultTab": "Collections",
 
+    "workbench.editor.customLabels.patterns": {
+        "**/product/**/package_spec/*.sql": "spec - ${filename}.${extname} (${dirname(1)})",
+        "**/product/**/package_body/*.sql": "body - ${filename}.${extname} (${dirname(1)})",
+        "**/nonprod/**/unit_test/package_spec/*.sql": "ut spec - ${filename}.${extname} (unit_test)",
+        "**/nonprod/**/unit_test/package_body/*.sql": "ut body - ${filename}.${extname} (unit_test)"
+    },
 }
