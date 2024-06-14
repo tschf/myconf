@@ -93,6 +93,7 @@
     "gitlens.advanced.messages": {
         "suppressLineUncommittedWarning": true
     },
+    "git.replaceTagsWhenPull": true,
     "git.suggestSmartCommit": false,
     "editor.unicodeHighlight.nonBasicASCII": true,
     "editor.copyWithSyntaxHighlighting": false,
