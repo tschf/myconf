@@ -160,6 +160,11 @@ import prettytable, json, sys
 
 # Process input
 jsonData = json.load(sys.stdin)
+
+# We have no data to pretty print, so exit early
+if len(jsonData) == 0:
+    exit(0)
+
 first_rec = jsonData[0]
 flattedRecs = [list(d.values()) for d in jsonData]
 
@@ -235,12 +240,14 @@ ocisearch_adb(){
         # On no matches, oci cli prints a message into the error stream and
         # standard out is blank. If its not blank it likely means we can a result
         # set back
-        if [[ "${adbData}" != "" ]]
+        if [[ "${adbData}" != "[]" ]]
         then
             # By default sort is by create date. It's easier to read a lot of
             # results when they are grouped by state and then by name.
             sortedAdbData=$(jq -r "sort_by(.state, .name)" <<< "${adbData}")
             echo "${sortedAdbData}" | print_json_table
+        else
+            printf "No ADB's with display name \"%s\"\n" "${displayName}"
         fi
     else
         printf "No search string specified\n" >&2
