@@ -115,4 +115,7 @@
     "material-icon-theme.folders.associations": {
         ".oci": "Config"
     },
+    "thunder-client.sidebar.showActivityFromCollection": true,
+    "thunder-client.sidebar.defaultTab": "Collections",
+
 }
