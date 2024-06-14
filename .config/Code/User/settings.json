@@ -1,58 +1,5 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "workbench.colorTheme": "GitHub Light Default",
-    "editor.guides.bracketPairs": "active",
-    "editor.renderWhitespace": "all",
-    "editor.trimAutoWhitespace": true,
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope":"constant.character.escape",
-                "settings": {
-                    "foreground": "#008000",
-                    "fontStyle": ""
-                }
-            }
-        ]
-    },
-    "files.trimTrailingWhitespace": true,
-    "editor.minimap.enabled": false,
-    "extensions.ignoreRecommendations": false,
-    "telemetry.telemetryLevel": "off",
-    "editor.rulers": [
-        80
-    ],
-    "editor.acceptSuggestionOnEnter": "smart",
-    "update.mode": "none",
-    "odb-task.auto-save": true,
-    "svn.enableProposedApi": "none",
-    "files.associations": {
-        "*.pkb": "sql",
-        "*.pks": "sql",
-        "*.ddl": "sql"
-    },
-    "[plsql]": {
-
-    },
-    "[markdown]": {
-        "editor.wordWrap": "on",
-        "editor.quickSuggestions": {
-            "comments": "off",
-            "strings": "off",
-            "other": "off"
-        },
-        "files.trimTrailingWhitespace": false
-    },
-    "workbench.colorCustomizations": {
-        "terminal.selectionBackground": "#a38e8e",
-        "terminal.background": "#000",
-        "terminal.foreground": "#fff"
-    },
-    "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 5,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "git.ignoreLegacyWarning": true,
-    "editor.tabSize": 2,
     "[dart]": {
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
@@ -65,65 +12,115 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": "off"
     },
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "other": "off",
+            "strings": "off"
+        },
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": false
+    },
+    "[plsql]": {},
     "[rust]": {
         "editor.formatOnSave": true
     },
+    "code-eol.crlfCharacter": "¤¬",
+    "code-eol.newlineCharacter": "¬",
+    "code-eol.returnCharacter": "¤",
+    "diffEditor.ignoreTrimWhitespace": false,
     "docker.dockerodeOptions": {
         "socketPath": "/run/user/1000/podman/podman.sock"
     },
-    "redhat.telemetry.enabled": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "security.workspace.trust.untrustedFiles": "open",
-    "window.restoreWindows": "none",
-    "terminal.integrated.enableShellIntegration": true,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.copyWithSyntaxHighlighting": false,
     "editor.fontFamily": "'IntoneMono Nerd Font Mono', 'SauceCodePro Nerd Font Mono', 'SauceCodePro Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontSize": 16,
-    "code-eol.newlineCharacter": "¬",
-    "code-eol.returnCharacter" : "¤",
-    "code-eol.crlfCharacter": "¤¬",
-    "terminal.integrated.fontSize": 20,
-    "vs-kubernetes": {
-        "vscode-kubernetes.minikube-path.linux": "/home/trent/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
-    },
-    "git.confirmSync": false,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "vsicons.dontShowNewVersionMessage": true,
-    "terminal.integrated.shellIntegration.enabled": false,
-    "java.saveActions.organizeImports": true,
-    "gitlens.advanced.messages": {
-        "suppressLineUncommittedWarning": true
-    },
-    "git.replaceTagsWhenPull": true,
-    "git.suggestSmartCommit": false,
-    "editor.unicodeHighlight.nonBasicASCII": true,
-    "editor.copyWithSyntaxHighlighting": false,
+    "editor.guides.bracketPairs": "active",
+    "editor.minimap.enabled": false,
     "editor.quickSuggestions": {
         "other": "off"
     },
-    "eslint.ignoreUntitled": true,
-    "yaml.customTags": [
-        "!reference sequence"
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80
     ],
-    "terminal.integrated.env.linux": {
-        "SHLVL": "0"
+    "editor.tabSize": 2,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "constant.character.escape",
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#008000"
+                }
+            }
+        ]
+    },
+    "editor.trimAutoWhitespace": true,
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "eslint.ignoreUntitled": true,
+    "extensions.ignoreRecommendations": false,
+    "files.associations": {
+        "*.ddl": "sql",
+        "*.pkb": "sql",
+        "*.pks": "sql"
+    },
+    "files.trimTrailingWhitespace": true,
+    "git.confirmSync": false,
+    "git.ignoreLegacyWarning": true,
+    "git.replaceTagsWhenPull": true,
+    "git.suggestSmartCommit": false,
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true
     },
     "gremlins.showInProblemPane": true,
+    "java.saveActions.organizeImports": true,
     "material-icon-theme.files.associations": {
-        ".work_env": "Console",
-        ".work_aliases": "Console"
+        ".work_aliases": "Console",
+        ".work_env": "Console"
     },
     "material-icon-theme.folders.associations": {
         ".oci": "Config"
     },
-    "thunder-client.sidebar.showActivityFromCollection": true,
-    "thunder-client.sidebar.defaultTab": "Collections",
-
-    "workbench.editor.customLabels.patterns": {
-        "**/product/**/package_spec/*.sql": "spec - ${filename}.${extname} (${dirname(1)})",
-        "**/product/**/package_body/*.sql": "body - ${filename}.${extname} (${dirname(1)})",
-        "**/nonprod/**/unit_test/package_spec/*.sql": "ut spec - ${filename}.${extname} (unit_test)",
-        "**/nonprod/**/unit_test/package_body/*.sql": "ut body - ${filename}.${extname} (unit_test)"
+    "odb-task.auto-save": true,
+    "redhat.telemetry.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "svn.enableProposedApi": "none",
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.enableShellIntegration": true,
+    "terminal.integrated.env.linux": {
+        "SHLVL": "0"
     },
+    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.shellIntegration.enabled": false,
+    "thunder-client.sidebar.defaultTab": "Collections",
+    "thunder-client.sidebar.showActivityFromCollection": true,
+    "update.mode": "none",
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path.linux": "/home/trent/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.restoreWindows": "none",
+    "workbench.colorCustomizations": {
+        "terminal.background": "#000",
+        "terminal.foreground": "#fff",
+        "terminal.selectionBackground": "#a38e8e"
+    },
+    "workbench.colorTheme": "GitHub Light Default",
+    "workbench.editor.customLabels.patterns": {
+        "**/nonprod/**/unit_test/package_body/*.sql": "ut body - ${filename}.${extname} (unit_test)",
+        "**/nonprod/**/unit_test/package_spec/*.sql": "ut spec - ${filename}.${extname} (unit_test)",
+        "**/product/**/package_body/*.sql": "body - ${filename}.${extname} (${dirname(1)})",
+        "**/product/**/package_spec/*.sql": "spec - ${filename}.${extname} (${dirname(1)})"
+    },
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 5,
+    "workbench.iconTheme": "material-icon-theme",
+    "yaml.customTags": [
+        "!reference sequence"
+    ],
     "yaml.schemas": {
         "https://json.schemastore.org/yamllint.json": "deploy.yaml"
     }
