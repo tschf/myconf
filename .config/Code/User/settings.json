@@ -124,4 +124,7 @@
         "**/nonprod/**/unit_test/package_spec/*.sql": "ut spec - ${filename}.${extname} (unit_test)",
         "**/nonprod/**/unit_test/package_body/*.sql": "ut body - ${filename}.${extname} (unit_test)"
     },
+    "yaml.schemas": {
+        "https://json.schemastore.org/yamllint.json": "deploy.yaml"
+    }
 }
