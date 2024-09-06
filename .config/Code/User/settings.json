@@ -109,7 +109,7 @@
         "terminal.foreground": "#fff",
         "terminal.selectionBackground": "#a38e8e"
     },
-    "workbench.colorTheme": "GitHub Light Default",
+    "workbench.colorTheme": "GitHub Light",
     "workbench.editor.customLabels.patterns": {
         "**/nonprod/**/unit_test/package_body/*.sql": "ut body - ${filename}.${extname} (unit_test)",
         "**/nonprod/**/unit_test/package_spec/*.sql": "ut spec - ${filename}.${extname} (unit_test)",
