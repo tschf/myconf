@@ -62,10 +62,12 @@
     "eslint.ignoreUntitled": true,
     "extensions.ignoreRecommendations": false,
     "files.associations": {
-        "*.ddl": "sql",
-        "*.pkb": "sql",
-        "*.pks": "sql"
+        "*.ddl": "oracle-sql",
+        "*.pkb": "oracle-sql",
+        "*.pks": "oracle-sql",
+        "*.sql": "oracle-sql"
     },
+    "files.defaultLanguage": "oracle-sql",
     "files.trimTrailingWhitespace": true,
     "git.confirmSync": false,
     "git.ignoreLegacyWarning": true,
