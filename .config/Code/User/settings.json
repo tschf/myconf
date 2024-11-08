@@ -58,7 +58,6 @@
         ]
     },
     "editor.trimAutoWhitespace": true,
-    "editor.unicodeHighlight.nonBasicASCII": true,
     "eslint.ignoreUntitled": true,
     "extensions.ignoreRecommendations": false,
     "files.associations": {
