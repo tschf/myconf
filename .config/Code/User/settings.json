@@ -131,4 +131,32 @@
     "database.nls.dateFormat": "DD-MON-RRRR",
     "database.nls.territory": "AUSTRALIA",
     "scm.showHistoryGraph": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "alignment.chars": {
+
+    ":": {
+      "spaceBefore": 0,
+      "spaceAfter": 1
+    },
+    ":=": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    "===": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    "==": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    "=>": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    " in ": {
+      "spaceBefore": 0,
+      "spaceAfter": 0
+    }
+}
 }
