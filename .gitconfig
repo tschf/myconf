@@ -4,6 +4,7 @@
     default = current
 [alias]
     addall = !git add . && git commit
+    dev = switch develop
     diffdir = !git difftool -t meld --dir-diff
     generic-commit = !git add . && git commit -m "Update" && git push
     grepi = grep -i
