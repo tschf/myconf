@@ -340,3 +340,21 @@ kns() {
 
     kubectl config set-context --current --namespace="$new_ns"
 }
+
+deviceip() {
+    device="$1"
+
+    if [[ -n "$device" ]]
+    then
+        ip addr show dev "$device" | awk '$1 == "inet" {print $2}' | cut -d '/' -f 1
+    else
+        for i in /sys/class/net/*; do
+            device=$(basename "$i")
+            ip=$(ip addr show dev "$device" | awk '$1 == "inet" {print $2}' | cut -d '/' -f 1)
+
+            if [[ -n "$ip" ]]; then
+                printf "%s: %s\n" "$device" "$ip"
+            fi
+        done
+    fi
+}
