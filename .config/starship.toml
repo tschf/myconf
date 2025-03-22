@@ -6,6 +6,7 @@ $sudo\
 $jobs\
 $shlvl\
 $kubernetes\
+${custom.needs_restart}\
 $directory\
 $git_branch\
 ${custom.git_user}\
@@ -124,6 +125,12 @@ disabled = false
 command = 'git config user.email'
 when = "git rev-parse --git-dir 2> /dev/null"
 format = "as [$output]($style) "
+
+[custom.needs_restart]
+when = '! dnf needs-restarting -r > /dev/null'
+symbol = ' '
+ignore_timeout = true
+style = 'bold red'
 
 [python]
 symbol = " "
