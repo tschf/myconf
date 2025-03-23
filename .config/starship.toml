@@ -142,7 +142,7 @@ symbol = '🐊 '
 [shlvl]
 disabled=false
 repeat=true
-threshold = 1
+threshold = 2
 format = "[$symbol]($style) "
 
 [kubernetes]
