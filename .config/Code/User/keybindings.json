@@ -13,5 +13,10 @@
     {
         "key": "ctrl+shift+b",
         "command": "odb-task.compileSqlPlus"
+    },
+    {
+        "key": "alt+enter",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "terminalProcessSupported"
     }
 ]
