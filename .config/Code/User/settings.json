@@ -93,12 +93,7 @@
     },
     "terminal.integrated.fontSize": 20,
     "terminal.integrated.shellIntegration.enabled": false,
-    "thunder-client.sidebar.defaultTab": "Collections",
-    "thunder-client.sidebar.showActivityFromCollection": true,
     "update.mode": "none",
-    "vs-kubernetes": {
-        "vscode-kubernetes.minikube-path.linux": "/home/trent/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
-    },
     "vsicons.dontShowNewVersionMessage": true,
     "window.restoreWindows": "none",
     "workbench.colorCustomizations": {
