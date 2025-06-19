@@ -21,7 +21,6 @@
         "editor.wordWrap": "on",
         "files.trimTrailingWhitespace": false
     },
-    "[plsql]": {},
     "[rust]": {
         "editor.formatOnSave": true
     },
