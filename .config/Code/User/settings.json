@@ -117,12 +117,6 @@
     "yaml.schemas": {
         "https://json.schemastore.org/yamllint.json": "deploy.yaml"
     },
-    "database.nls.ISOCurrency": "AUSTRALIA",
-    "database.nls.timestampTZ Format": "DD-MON-RRRR HH24:MI:SSXFF TZR",
-    "database.nls.timestampFormat": "DD-MON-RRRR HH24:MI:SSXFF",
-    "database.nls.dateFormat": "DD-MON-RRRR",
-    "database.nls.territory": "AUSTRALIA",
-    "scm.showHistoryGraph": false,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "alignment.chars": {
 
