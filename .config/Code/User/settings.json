@@ -83,7 +83,6 @@
     "material-icon-theme.folders.associations": {
         ".oci": "Config"
     },
-    "odb-task.auto-save": true,
     "redhat.telemetry.enabled": true,
     "security.workspace.trust.untrustedFiles": "open",
     "svn.enableProposedApi": "none",
