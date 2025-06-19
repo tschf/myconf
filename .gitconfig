@@ -13,6 +13,7 @@
     lgmerges = log --abbrev-commit --decorate --format=format:'* %B' --merges
     padd = add -p
     prune-sync = "!git fetch -p && git branch --format '%(refname:short) %(upstream:track)' | awk '/\\[gone\\]$/ { print $1 }'" | xargs -r git branch -D
+    rmremote = push origin --delete
     rmunstaged = clean -df
     statuslong = status --long
     newbranch = "!f() { branch_name=\"$1\"; git switch -c \"$branch_name\" develop; git commit -m \"Initial commit for $branch_name\" --allow-empty; git push origin -u; }; f"
