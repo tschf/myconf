@@ -144,5 +144,15 @@
       "spaceBefore": 0,
       "spaceAfter": 0
     }
-}
+},
+"terminal.integrated.enableMultiLinePasteWarning": false,
+"sqldeveloper.database.nls.territory": "AUSTRALIA",
+"sqldeveloper.database.nls.dateFormat": "DD-MON-RRRR",
+"sqldeveloper.database.nls.timestampFormat": "DD-MON-RRRR HH24:MI:SSXFF",
+"sqldeveloper.database.nls.timestampTZ Format": "DD-MON-RRRR HH24:MI:SSXFF TZR",
+"sqldeveloper.database.nls.ISOCurrency": "AUSTRALIA",
+"sqldeveloper.sqlHistory.historyLimit": 500,
+"extensions.autoUpdate": true,
+"git.blame.editorDecoration.enabled": false,
+"containers.containerClient": "com.microsoft.visualstudio.containers.podman",
 }
