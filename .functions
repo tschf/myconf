@@ -75,6 +75,16 @@ dirfilesize(){
     du -h --max-depth 1 "$1" | sort -rh | tail -n +2
 }
 
+find_cmd(){
+    cmd="$1"
+
+    {
+        compgen -A alias
+        # -c : builtins, functions, executables
+        compgen -c
+    } | uniq | sort | fzf -i --query="$cmd" --select-1 --exit-0
+}
+
 sqlplus() {
     # All arg options:
     # - $*
