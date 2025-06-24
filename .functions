@@ -82,7 +82,7 @@ find_cmd(){
         compgen -A alias
         # -c : builtins, functions, executables
         compgen -c
-    } | uniq | sort | fzf -i --query="$cmd" --select-1 --exit-0
+    } | sort | uniq | fzf -i --query="$cmd" --select-1 --exit-0
 }
 
 sqlplus() {
