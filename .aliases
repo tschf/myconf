@@ -24,6 +24,7 @@ alias httpserve='python -m http.server'
 alias liquibase='liquibase --show-banner=false'
 alias netdevices='ls -1 /sys/class/net --color=never'
 # OCI cli usage docs: https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/API/SDKDocs/cliusing.htm
+alias ociaimodels='oci generative-ai model-collection list-models --query '\''sort_by(data.items[?"lifecycle-state"==`ACTIVE`],&"display-name")[].{"Model":"display-name","Vendor":"vendor"}'\'' --output table'
 alias ocipythonsdkversion='python -c "from oci import __version__ as ociver;print(ociver)"'
 alias ocicompartmentls='printf "Using profile %s\n" "$(whichociprofile)" && oci iam compartment ls --query "data[*].{id: id, name: name}" --output table --sort-by name'
 alias ociregionls='printf "Using profile %s\n" "$(whichociprofile)" && oci iam region ls --output table'
